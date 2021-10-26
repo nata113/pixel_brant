@@ -1,2 +1,7 @@
-package com.pixelbrand.site.enums;public enum Permiso {
+package com.pixelbrand.site.enums;
+
+public enum Permiso {
+
+    EDITAR(""),
+
 }
