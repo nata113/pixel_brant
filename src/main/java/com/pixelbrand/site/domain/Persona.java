@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor 	// Me crea un constructor con todos los parámetros
 public class Persona {
 
+	//Test
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_PERSONA", length = 36, nullable = false, updatable = false, columnDefinition = "VARCHAR(36) NOT NULL")
