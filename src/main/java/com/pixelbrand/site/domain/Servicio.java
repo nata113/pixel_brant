@@ -21,9 +21,10 @@ public class Servicio {
 
     private Long valorHora;
 
+    @ManyToMany
     private Actividad actividad;
 
-    OneToMany
+    @OneToMany
     private Factura factura;
 
 
