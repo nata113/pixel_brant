@@ -9,7 +9,7 @@ public class Factura {
     @Column(length = 15, nullable = false, updatable = false, columnDefinition = "VARCHAR(15) NOT NULL")
     private Long id;
 
-    
+
     private Servicio servicio;
 
 
