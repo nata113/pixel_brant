@@ -23,7 +23,7 @@ public class Servicio {
 
     private Actividad actividad;
 
-
+    OneToMany
     private Factura factura;
 
 

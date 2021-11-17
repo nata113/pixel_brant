@@ -21,6 +21,7 @@ public class ReservaSala {
 
     private Date fechaInicio;
 
+    @ManyToOne
     private Sala sala;
 
     private Date fechaFin;
