@@ -3,10 +3,7 @@ import com.pixelbrand.site.enums.Estado;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -27,6 +24,7 @@ public class Actividad {
     @Column(length = 11, updatable = false, columnDefinition = "VARCHAR(11)")
     private Estado estado;
 
+    @ManyToMany
     private Servicio servicio;
 
 

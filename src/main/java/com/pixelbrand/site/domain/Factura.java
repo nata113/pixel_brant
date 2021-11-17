@@ -1,9 +1,6 @@
 package com.pixelbrand.site.domain;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 public class Factura {
 
@@ -12,8 +9,11 @@ public class Factura {
     @Column(length = 15, nullable = false, updatable = false, columnDefinition = "VARCHAR(15) NOT NULL")
     private Long id;
 
+    
     private Servicio servicio;
 
+
+    @OneToMany
     private Cliente cliente;
 
     @Column(length = 15, columnDefinition = "VARCHAR(15)")
