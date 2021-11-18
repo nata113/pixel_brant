@@ -1,31 +1,25 @@
-package com.pixelbrand.site.domain;
+package com.pixelbrand.site.dominio;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Data
+@Entity
 @NoArgsConstructor
-public class ReservaSala {
+public class Sala {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(length = 15, nullable = false, updatable = false, columnDefinition = "VARCHAR(15) NOT NULL")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn
-    private Empleado empleado;
+    @Column(length = 40, updatable = false, columnDefinition = "VARCHAR(40)")
+    private String nombreSala;
 
-    private Date fechaInicio;
-
-    @ManyToOne
-    private Sala sala;
-
-    private Date fechaFin;
-
+    @Column(length = 30, updatable = false, columnDefinition = "VARCHAR(30)")
+    private String ubicacion;
 
 
 }

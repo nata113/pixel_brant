@@ -1,6 +1,6 @@
 package com.pixelbrand.site.controlador.rest;
 
-import com.pixelbrand.site.domain.Actividad;
+import com.pixelbrand.site.dominio.Actividad;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

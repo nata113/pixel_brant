@@ -1,6 +1,6 @@
 package com.pixelbrand.site.controlador.rest;
 
-import com.pixelbrand.site.domain.Cliente;
+import com.pixelbrand.site.dominio.Cliente;
 import com.pixelbrand.site.dto.ClienteServicioDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

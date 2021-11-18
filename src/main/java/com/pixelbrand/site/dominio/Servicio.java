@@ -1,8 +1,14 @@
-package com.pixelbrand.site.domain;
+package com.pixelbrand.site.dominio;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
+@Data
+@Entity
+@NoArgsConstructor
 public class Servicio {
 
     @Id
@@ -21,10 +27,11 @@ public class Servicio {
 
     private Long valorHora;
 
-    private Actividad actividad;
+    @ManyToMany
+    private Set<Actividad> actividad;
 
     @OneToMany
-    private Factura factura;
+    private Set<Factura> factura;
 
 
 }

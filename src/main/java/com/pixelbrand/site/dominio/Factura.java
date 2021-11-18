@@ -1,7 +1,14 @@
-package com.pixelbrand.site.domain;
+package com.pixelbrand.site.dominio;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
+@Data
+@Entity
+@NoArgsConstructor
 public class Factura {
 
     @Id
@@ -12,9 +19,8 @@ public class Factura {
     @ManyToOne
     private Servicio servicio;
 
-
     @OneToMany
-    private Cliente cliente;
+    private Set<Cliente> cliente;
 
     @Column(length = 15, columnDefinition = "VARCHAR(15)")
     private Long valor;

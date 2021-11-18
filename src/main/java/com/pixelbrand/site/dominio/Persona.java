@@ -1,4 +1,4 @@
-package com.pixelbrand.site.domain;
+package com.pixelbrand.site.dominio;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,11 +1,13 @@
-package com.pixelbrand.site.domain;
+package com.pixelbrand.site.dominio;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
+@Entity
 @NoArgsConstructor
 public class Empleado {
 
@@ -54,6 +56,6 @@ public class Empleado {
     private Long salario;
 
     @OneToMany(mappedBy="empleado")
-    private ReservaSala reservasSalas;
+    private Set<ReservaSala> reservasSalas;
 
 }

@@ -1,5 +1,4 @@
-package com.pixelbrand.site.domain;
-
+package com.pixelbrand.site.dominio;
 import com.pixelbrand.site.enums.Estado;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,38 +7,27 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Data
+@Entity
 @NoArgsConstructor
-public class Cliente {
+public class Actividad {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(length = 15, nullable = false, updatable = false, columnDefinition = "VARCHAR(15) NOT NULL")
     private Long id;
 
-    @Column(length = 11, updatable = false, columnDefinition = "VARCHAR(11)")
-    private Long nit;
 
     @Column(length = 50, updatable = false, columnDefinition = "VARCHAR(50)")
     private String nombre;
 
     @Column(length = 50, updatable = false, columnDefinition = "VARCHAR(50)")
-    private String razonSocial;
-
-    @Column(length = 50, updatable = false, columnDefinition = "VARCHAR(50)")
-    private String representante;
+    private String descripcion;
 
     @Column(length = 11, updatable = false, columnDefinition = "VARCHAR(11)")
     private Estado estado;
 
-    @Column(length = 11, updatable = false, columnDefinition = "VARCHAR(11)")
-    private Long telefono;
-
     @ManyToMany
-    private Set<Servicio> serviciosAsignados;
-
-
-    private Cliente cliente;
-
+    private Set<Servicio> servicio;
 
 
 }
