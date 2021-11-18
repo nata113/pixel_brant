@@ -1,30 +1,15 @@
 package com.pixelbrand.site.controlador;
 
-import com.pixelbrand.site.domain.Sala;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+@Controller
 @RequestMapping("/sala")
 public class SalaControlador {
 
-    @PostMapping("/")
-    public ResponseEntity<?> crearSala(@RequestBody Sala sala) {
-
-        return null;
-    }
-
-    @PostMapping("/reserva")
-    public ResponseEntity<?> reservarSala(@RequestBody Sala sala) {
-
-        System.out.println("prueba reserva");
-        return null;
-    }
-
-    @GetMapping("/get-reserva")
-    public ResponseEntity<?> reservarSala() {
-
-        System.out.println("prueba reserva");
-        return null;
+    @GetMapping("/")
+    public String index() {
+        return "sala";
     }
 }

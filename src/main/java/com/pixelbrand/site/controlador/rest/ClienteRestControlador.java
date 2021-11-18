@@ -1,4 +1,4 @@
-package com.pixelbrand.site.controlador;
+package com.pixelbrand.site.controlador.rest;
 
 import com.pixelbrand.site.domain.Cliente;
 import com.pixelbrand.site.dto.ClienteServicioDTO;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/cliente")
-public class ClienteControlador {
+public class ClienteRestControlador {
 
     @PostMapping("/")
     public ResponseEntity<?> crearCliente(@RequestBody Cliente cliente) {
