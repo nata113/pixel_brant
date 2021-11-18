@@ -1,8 +1,5 @@
 package com.pixelbrand.site.enums;
 
-import lombok.Data;
-
-@Data
 public enum Estado {
 
     ACTIVO("Activo"),
@@ -11,5 +8,13 @@ public enum Estado {
     private String code;
 
     Estado(String activo) {
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

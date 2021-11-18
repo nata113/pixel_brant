@@ -1,8 +1,5 @@
 package com.pixelbrand.site.enums;
 
-import lombok.Data;
-
-@Data
 public enum TipoContrato {
 
     INDEFINIDO("Indefinido"),
@@ -12,5 +9,13 @@ public enum TipoContrato {
 
 
     TipoContrato(String indefinido) {
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
