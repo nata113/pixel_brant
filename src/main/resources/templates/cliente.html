@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/png" href="img/logop.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logop.png">
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32">
+
+    <title>Pixel Brant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/estilos.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+<section style="padding-top: 120px; padding-bottom:40px">
+    <div class="container section-header">
+        <div class="pull-right" style="margin-top: -20px">
+            <a data-toggle="collapse" href="#collapseCreate" role="button" aria-expanded="false" aria-controls="collapseCreate"
+               class="btn btn-primary btn-lg mt-5" name="Crear" style="margin-right: 6px; width: 155px"><i class="fa fa-plus"></i> CREAR</a>
+            <a data-toggle="collapse" href="#collapseAsignar" role="button" aria-expanded="false" aria-controls="collapseCreate"
+               class="btn btn-primary btn-lg mt-5" name="Crear" style="margin-right: 6px; width: 155px"><i class="fa fa-plus"></i> ASIGNAR</a>
+        </div>
+        <h3 class="display-4 section-title">Cliente</h3>
+        <br>
+    </div>
+</section>
+
+
+<section class="collapse" id="collapseCreate" style="padding-bottom:40px">
+    <div class="container">
+        <form onsubmit="return Validar()" action="ServletCliente" method="get" name="Cliente">
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label>Registrar Cliente</label>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >NIT*</span>
+                            </div>
+                            <input type="text" class="form-control" name="txtNIT" id="txtNIT" placeholder="NIT" aria-label="NIT" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >Nombre*</span>
+                            </div>
+                            <input onkeypress="return soloLetras(event)" type="text" class="form-control" name="txtNombre" id="txtNombre" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >Razón Social*</span>
+                            </div>
+                            <input type="text" class="form-control" name="txtRazon" id="txtRazon" placeholder="Razón Social" aria-label="Regalias" aria-describedby="basic-addon1" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >Teléfono</span>
+                            </div>
+                            <input type="text" class="form-control" name="txtTel" id="txtTel" placeholder="Teléfono" aria-label="Regalias" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required >
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Estado*</span>
+                            </div>
+                            <select class="custom-select" id="txtEstado" name="txtEstado">
+                            </select>
+                        </div>
+                        <div class="pull-right">
+
+                            <input type="submit" class="btn btn-primary" style="color:#ffffff" value="GUARDAR" name="opc" id="GUARDAR">
+                            <a data-toggle="collapse" href="#collapseCreate" class="btn btn-info" style="color:#ffffff"><i class="fa fa-times"></i> CANCELAR</a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+<section class="collapse" id="collapseAsignar" style="padding-bottom:40px">
+    <div class="container">
+        <form onsubmit="return Validar()" action="ServletCliente" method="get" name="Cliente">
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label>Asignar Servicio</label>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Cliente*</span>
+                            </div>
+                            <select class="custom-select" id="txtCliente" name="txtCliente">
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >Servicio*</span>
+                            </div>
+                            <select class="custom-select" id="txtServicio" name="txtServicio">
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >Valor Hora*</span>
+                            </div>
+                            <input type="text" class="form-control" name="txtValhora" id="txtValhora" placeholder="Valor Hora" aria-label="Regalias" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required >
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >Estado*</span>
+                            </div>
+                            <select class="custom-select" id="txtEstadoA" name="txtEstadoA">
+                            </select>
+                        </div>
+                        <div class="pull-right">
+
+                            <input type="submit" class="btn btn-primary" style="color:#ffffff" value="ASIGNAR" name="opc">
+                            <a data-toggle="collapse" href="#collapseAsignar" class="btn btn-info" style="color:#ffffff" id="btnCancel"><i class="fa fa-times"></i> CANCELAR</a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" >Buscar</span>
+            </div>
+            <input type="text" class="form-control" id="Buscar" name="Buscar" placeholder="Buscar" aria-label="Direccion" aria-describedby="basic-addon1" onkeypress="return doSearch()">
+        </div>
+
+    </div>
+</div>
+<div class="container-fluid">
+    <center>
+        <table class="table-info table-responsive-lg" id="info">
+            <tr class="table-hover">
+                <th>NIT</th>
+                <th>NOMBRE</th>
+                <th>RAZON SOCIAL</th>
+                <th>ESTADO</th>
+                <th>EDITAR</th>
+                <th>SERVICIOS</th>
+            </tr>
+        </table>
+    </center>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="return Validar()" action="ServletCliente" method="get" name="Clienteeditar">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="input-group mb-3">
+                                    <input style="display:none" type="text" class="form-control" name="txtID" id="txtID" placeholder="NIT" aria-label="NIT" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >NIT*</span>
+                                    </div>
+                                    <input type="text" class="form-control" name="txtNITe" id="txtNITe" placeholder="NIT" aria-label="NIT" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" >
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Nombre*</span>
+                                    </div>
+                                    <input onkeypress="return soloLetras(event)" type="text" class="form-control" name="txtNombree" id="txtNombree" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Razón Social*</span>
+                                    </div>
+                                    <input type="text" class="form-control" name="txtRazone" id="txtRazone" placeholder="Razon Social" aria-label="Regalias" aria-describedby="basic-addon1" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Teléfono</span>
+                                    </div>
+                                    <input type="text" class="form-control" name="txtTele" id="txtTele" placeholder="Telefono" aria-label="Regalias" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required >
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Estado*</span>
+                                    </div>
+                                    <select class="custom-select" name="txtEstadoe" id="txtEstadoe">
+                                        <option>Elige el estado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary" value="EDITAR" name="opc" id="EDITAR">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">CANCELAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Modal ASIGNAR-->
+<div class="modal fade" id="exampleModalAsignar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalasignarlabel">Cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="return Validar()" action="ServletCliente" method="get" name="Clienteasignar">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group mb-3">
+                                    <input style="display:none" type="text" class="form-control" name="txtIDclien" id="txtIDclien">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Servicio*</span>
+                                    </div>
+                                    <select class="custom-select" name="txtServicioAsignar" id="txtServicioAsignar">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="input-group mb-3">
+                                    <input style="display:none" type="text" class="form-control" name="txtIDservi" id="txtIDservi" placeholder="NIT" aria-label="NIT" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Valor hora*</span>
+                                    </div>
+                                    <input type="text" class="form-control" name="txtValorh" id="txtValorh" placeholder="Valor hora" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" >
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Estado*</span>
+                                    </div>
+                                    <select class="custom-select" name="txtEstadoAsignar" id="txtEstadoAsignar">
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        <center>
+                            <table >
+                                <tr>
+                                    <th>SERVICIO</th>
+                                    <th>VALOR HORA</th>
+                                    <th>ESTADO</th>
+                                    <th>EDITAR</th>
+                                </tr>
+                            </table>
+                        </center>
+                    </div>
+                    <div class="modal-footer">
+                        <a> <input type="submit" class="btn btn-primary" value="EDITAR" name="opc" id="EDITARASIGNAR" style="color:#ffffff"><i class="fa fa-save fa-2x"></i></a>
+                        <a> <button type="button" class="btn btn-info" data-dismiss="modal" style="color:#ffffff"></button><i class="fa fa-times fa-2x"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
