@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/png" href="img/logop.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logop.png">
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32">
+
+    <title>Pixel Brant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/estilos.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+
+<section style="padding-top: 120px; padding-bottom:40px">
+    <div class="container section-header">
+        <div class="pull-right" style="margin-top: -20px">
+            <a data-toggle="collapse" href="#collapseCreate" role="button" aria-expanded="false" aria-controls="collapseCreate"
+               class="btn btn-primary btn-lg mt-5" name="Crear" style="margin-right: 6px; width: 155px"><i class="fa fa-plus"></i> CREAR</a>
+        </div>
+        <h3 class="display-4 section-title">Empleado</h3>
+        <br>
+    </div>
+</section>
+
+
+<section class="collapse" id="collapseCreate" style="padding-bottom:40px">
+    <div class="container">
+        <form onsubmit="return Validar()" action="ServletEmpleado" method="post" name="Empleado">
+            <div class="card card-body">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <label>Registrar Empleado</label>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tipo identificación*</span>
+                            </div>
+                            <select class="custom-select" name="TipoID">
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Identificación*</span>
+                            </div>
+                            <input type="text" class="form-control" id="txtID" name="txtID" placeholder="Identificación" aria-label="Identificación" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Nombres*</span>
+                            </div>
+                            <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombres" aria-label="Nombre" aria-describedby="basic-addon1" onkeypress="return soloLetras(event)" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Primer Apellido*</span>
+                            </div>
+                            <input type="text" class="form-control" id="txtApellido1" name="txtApellido1" placeholder="Primer Apellido" aria-label="Apellidos" aria-describedby="basic-addon1" onkeypress="return soloLetras(event)" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Segundo Apellido*</span>
+                            </div>
+                            <input type="text" class="form-control" id="txtApellido2" name="txtApellido2" placeholder="Segundo Apellido" aria-label="Apellidos" aria-describedby="basic-addon1" onkeypress="return soloLetras(event)" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Dirección*</span>
+                            </div>
+                            <input type="text" class="form-control" id="txtDire" name="txtDire" placeholder="Dirección" aria-label="Direccion" aria-describedby="basic-addon1" required>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Teléfono</span>
+                            </div>
+                            <input type="text" class="form-control" id="txtTel" name="txtTel" placeholder="Teléfono" aria-label="Direccion" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tipo de empleado*</span>
+                            </div>
+                            <select class="custom-select" name="tipo_emp">
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Estado*</span>
+                            </div>
+                            <select class="custom-select" name="estado">
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >Vigencia contrato*</span>
+                            </div>
+                            <input type="text" class="form-control" id="txtVig" name="txtVig" placeholder="Vigencia contrato" aria-label="Direccion" aria-describedby="basic-addon1" required>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" >Cargo*</span>
+                            </div>
+                            <select class="custom-select" name="Cargo">
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tipo de contrato*</span>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="tipo_cont" >
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Salario</span>
+                            </div>
+                            <input type="text" class="form-control" id="txtSala" name="txtSala" placeholder="Salario" aria-label="Direccion" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                        </div>
+                        <div class="pull-right">
+                        </div>
+                        <div class="pull-right">
+                            <input type="submit" class="btn btn-primary" style="color:#ffffff" value="GUARDAR" name="opc" id="GUARDAR">
+                            <a data-toggle="collapse" href="#collapseCreate" class="btn btn-info" style="color:#ffffff" id="btnCancel" onclick="return cancel()"><i class="fa fa-times" ></i> CANCELAR</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Buscar</span>
+            </div>
+            <input type="text" class="form-control" name="Buscar" placeholder="Buscar" aria-label="Direccion" aria-describedby="basic-addon1" id="Buscar" onkeypress="return doSearch()">
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <center>
+        <table class="table-responsive-lg table-bordered" id="info">
+            <tr>
+                <th>IDENTIFICACIÓN</th>
+                <th>NOMBRE</th>
+                <th>PRIMER APELLIDO</th>
+                <th>SEGUNDO APELLIDO</th>
+                <th>CARGO</th>
+                <th>ESTADO</th>
+                <th>Editar</th>
+            </tr>
+        </table>
+    </center>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Editar Empleado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="return Validar()" action="ServletEmpleado" method="get" name="EmpleadoEditar">
+                    <div class="card card-body">
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <label>Registrar Empleado</label>
+                                <input style="display:none" type="text" class="form-control" id="txtIDEMPLE" name="txtIDEMPLE" placeholder="Identificación" aria-label="Identificación" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Tipo identificación*</span>
+                                    </div>
+                                    <select class="custom-select" name="TipoIDe" id="TipoIDe">
+                                    </select>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Identificación*</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtIDe" name="txtIDe" placeholder="Identificación" aria-label="Identificación" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Nombres*</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtNombree" name="txtNombree" placeholder="Nombres" aria-label="Nombre" aria-describedby="basic-addon1" onkeypress="return soloLetras(event)" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Primer Apellido*</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtApellido1e" name="txtApellido1e" placeholder="Primer Apellido" aria-label="Apellidos" aria-describedby="basic-addon1" onkeypress="return soloLetras(event)" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Segundo Apellido*</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtApellido2e" name="txtApellido2e" placeholder="Segundo Apellido" aria-label="Apellidos" aria-describedby="basic-addon1" onkeypress="return soloLetras(event)" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Dirección*</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtDiree" name="txtDiree" placeholder="Dirección" aria-label="Direccion" aria-describedby="basic-addon1" required>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6">
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Teléfono</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtTele" name="txtTele" placeholder="Teléfono" aria-label="Direccion" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Tipo de empleado*</span>
+                                    </div>
+                                    <select class="custom-select" name="tipo_empe" id="tipo_empe">
+                                    </select>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" >Estado*</span>
+                                    </div>
+                                    <select class="custom-select" id="estadoe" name="estadoe">
+                                    </select>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Vigencia contrato*</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtVige" name="txtVige" placeholder="Vigencia contrato" aria-label="Direccion" aria-describedby="basic-addon1" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Cargo*</span>
+                                    </div>
+                                    <select class="custom-select" id="Cargoe" name="Cargoe">
+                                    </select>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Tipo de contrato*</span>
+                                    </div>
+                                    <select class="custom-select" id="tipo_conte" name="tipo_conte">
+                                    </select>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Salario</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="txtSalae" name="txtSalae" placeholder="Salario" aria-label="Direccion" aria-describedby="basic-addon1" onkeypress="return soloNumero(event)" required>
+                                </div>
+
+                                <div class="pull-right">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary" value="EDITAR" name="opc" id="EDITAR">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">CANCELAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
