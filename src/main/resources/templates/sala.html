@@ -17,17 +17,22 @@
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 <body>
 <section style="padding-top: 120px; padding-bottom:40px">
     <div class="container section-header">
         <div class="pull-right" style="margin-top: -20px">
-            <a data-toggle="collapse" href="#collapseCreate2" role="button" aria-expanded="false" aria-controls="collapseCreate"
-               class="btn btn-primary btn-lg mt-5" name="Crear" style="margin-right: 6px; width: 155px"><i class="fa fa-plus"></i> CREAR</a>
-            <a data-toggle="collapse" href="#collapseCreate" role="button" aria-expanded="false" aria-controls="collapseCreate"
-               class="btn btn-primary btn-lg mt-5" name="Crear" style="margin-right: 6px; width: 155px"><i class="fa fa-plus"></i> RESERVAR</a>
+            <a data-toggle="collapse" href="#collapseCreate2" role="button" aria-expanded="false"
+               aria-controls="collapseCreate"
+               class="btn btn-primary btn-lg mt-5" name="Crear" style="margin-right: 6px; width: 155px"><i
+                    class="fa fa-plus"></i> CREAR</a>
+            <a data-toggle="collapse" href="#collapseCreate" role="button" aria-expanded="false"
+               aria-controls="collapseCreate"
+               class="btn btn-primary btn-lg mt-5" name="Crear" style="margin-right: 6px; width: 155px"><i
+                    class="fa fa-plus"></i> RESERVAR</a>
         </div>
         <h3 class="display-4 section-title">Sala</h3>
         <br>
@@ -59,7 +64,7 @@
                             <div class="input-group-prepend">
                                 <h2>Empleado Encargado</h2>
                             </div>
-                            <select class="custom-select"name="txtEncargado">
+                            <select class="custom-select" name="txtEncargado">
                                 <option>Elige la sala</option>
                             </select>
                         </div>
@@ -68,7 +73,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Fecha Inicio</span>
                             </div>
-                            <input type="date" class="form-control" id="fechainicio" name="fechainicio" placeholder="Fecha Inicio" aria-label="Fechaini" aria-describedby="basic-addon1">
+                            <input type="date" class="form-control" id="fechainicio" name="fechainicio"
+                                   placeholder="Fecha Inicio" aria-label="Fechaini" aria-describedby="basic-addon1">
                         </div>
 
                         <div class="input-group mb-3">
@@ -76,16 +82,20 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Fecha Fin</span>
                                 </div>
-                                <input type="date" class="form-control" id="fechafin" name="fechafin" placeholder="Fecha Fin" aria-label="Fechafin" aria-describedby="basic-addon1">
+                                <input type="date" class="form-control" id="fechafin" name="fechafin"
+                                       placeholder="Fecha Fin" aria-label="Fechafin" aria-describedby="basic-addon1">
 
 
                             </div>
 
 
                             <div class="pull-right">
-                                <input type="submit" class="btn btn-primary" style="color:#ffffff; display: none" value="EDITAR" name="opc1">
-                                <input type="submit" class="btn btn-primary" style="color:#ffffff" value="RESERVAR" name="opc1">
-                                <a class="btn btn-info" style="color:#ffffff" onclick="return cancel()"><i class="fa fa-times" href="#collapseCreate"></i>CANCELAR</a>
+                                <input type="submit" class="btn btn-primary" style="color:#ffffff; display: none"
+                                       value="EDITAR" name="opc1">
+                                <input type="submit" class="btn btn-primary" style="color:#ffffff" value="RESERVAR"
+                                       name="opc1">
+                                <a class="btn btn-info" style="color:#ffffff" onclick="return cancel()"><i
+                                        class="fa fa-times" href="#collapseCreate"></i>CANCELAR</a>
                             </div>
 
                         </div>
@@ -112,21 +122,26 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nombre Sala</span>
                         </div>
-                        <input type="text" class="form-control" id="txtNomSala" name="txtNomSala" placeholder="NomSala" aria-label="NomSala" aria-describedby="basic-addon1" required>
+                        <input type="text" class="form-control" id="txtNomSala" name="txtNomSala" placeholder="NomSala"
+                               aria-label="NomSala" aria-describedby="basic-addon1" required>
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Ubicación</span>
                         </div>
-                        <input type="text" class="form-control" id="txtUbicacion" name="txtUbicacion" placeholder="Ubicacion" aria-label="Ubicación" aria-describedby="basic-addon1" required>
+                        <input type="text" class="form-control" id="txtUbicacion" name="txtUbicacion"
+                               placeholder="Ubicacion" aria-label="Ubicación" aria-describedby="basic-addon1" required>
                     </div>
 
 
                     <div class="pull-right">
-                        <input type="submit" class="btn btn-primary" style="color:#ffffff; display: none" value="EDITAR" name="opc" id="EDITAR">
-                        <input type="submit" class="btn btn-primary" style="color:#ffffff" value="GUARDAR" name="opc" id="GUARDAR">
-                        <a class="btn btn-info" style="color:#ffffff" id="btnCancel" onclick="return cancel()"><i class="fa fa-times" href="#collapseCreate"></i>CANCELAR</a>
+                        <input type="submit" class="btn btn-primary" style="color:#ffffff; display: none" value="EDITAR"
+                               name="opc" id="EDITAR">
+                        <input type="submit" class="btn btn-primary" style="color:#ffffff" value="GUARDAR" name="opc"
+                               id="GUARDAR">
+                        <a class="btn btn-info" style="color:#ffffff" id="btnCancel" onclick="return cancel()"><i
+                                class="fa fa-times" href="#collapseCreate"></i>CANCELAR</a>
                     </div>
 
                 </div>
