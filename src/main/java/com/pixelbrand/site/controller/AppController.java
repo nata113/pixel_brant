@@ -14,7 +14,7 @@ public class AppController {
 
     @GetMapping("/menu")
     public String hello() {
-        return "menu2";
+        return "menu";
     }
 
     @GetMapping("/user")
