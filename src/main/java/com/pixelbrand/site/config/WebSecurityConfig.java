@@ -17,6 +17,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
+    @Autowired
+    UserDetailsServiceImpl userDetailsService;
+
     //Necesario para evitar que la seguridad se aplique a los resources
     //Como los css, imagenes y javascripts
     String[] resources = new String[]{
@@ -29,8 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .authorizeRequests()
                 .antMatchers(resources).permitAll()
                 .antMatchers("/","/index").permitAll()
-                //.antMatchers("/admin*").access("hasRole('ADMIN')")
-                //.antMatchers("/user*").access("hasRole('USER') or hasRole('ADMIN')")
+                //.antMatchers("/admin*").access("hasRole('ROLE_ADMIN')")
+                //.antMatchers("/user*").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -56,9 +59,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 //que inicies la aplicacion, por lo cual tus contrasenas encriptadas no funcionaran bien
         return bCryptPasswordEncoder;
     }
-
-    @Autowired
-    UserDetailsServiceImpl userDetailsService;
 
     //Registra el service para usuarios y el encriptador de contrasena
     @Autowired
